@@ -1,0 +1,23 @@
+From 93df648cc37c62ec6b0933d43061e29f886d289d Mon Sep 17 00:00:00 2001
+From: developer <Manasa>
+Date: Tue, 16 Jul 2019 03:59:37 -0500
+Subject: [PATCH] patching
+
+---
+ main.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/main.c b/main.c
+index c4edce6..9b54a3d 100644
+--- a/main.c
++++ b/main.c
+@@ -15,5 +15,6 @@ int main(int argc, char *argv[])
+ 	printf("%d+%d = %d\n", a,b,add(a,b) );
+ 	printf("%d-%d = %d\n", a,b,sub(a,b) );
+ 	printf("%d*%d = %d\n", a,b,mul(a,b) );
++	printf("Adding patch file\n");
+ 	return 0;
+ }
+-- 
+1.9.1
+

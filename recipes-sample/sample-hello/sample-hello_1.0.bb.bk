@@ -1,0 +1,23 @@
+LICENSE = "CLOSED"
+
+#
+# This is a template recipes. It helps developers to test codes quickly.
+# 1. Just copy codes into "files" directory.
+# 2. build/compile codes by running "bitbake hello-cortina" in build directory
+# 3. If you would like add it in rootfs, add following text in conf/local.conf
+#    CORE_IMAGE_EXTRA_INSTALL +=  "hello-cortina"
+#
+
+copy_sources() {
+	cp -rf ${THISDIR}/files/* ${S}
+}
+do_patch[postfuncs] += "copy_sources"
+
+FILES_SOLIBSDEV = ""
+FILES_${PN} += "${libdir}/*.so"
+
+do_install () {
+	oe_runmake install DEST_DIR=${D}/${bindir}
+}
+
+CORE_IMAGE_EXTRA_INSTALL +=  "sample-hello"
